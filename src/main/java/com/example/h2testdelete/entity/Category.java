@@ -28,13 +28,7 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 
-    @CreationTimestamp
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
 
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 
 }
 

@@ -1,7 +1,7 @@
 server:
   port: 8189
   servlet:
-    context-path: /appp
+    context-path: /app
 utils:
   cart:
     prefix: SPRING_WEB_
@@ -22,5 +22,8 @@ spring:
       enabled: true
       settings:
         web-allow-others: false
+
+
+
 
 
