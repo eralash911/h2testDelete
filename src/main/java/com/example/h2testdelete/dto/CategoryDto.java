@@ -6,16 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
 @Data
+@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
-public class ProductDto {
+public class CategoryDto {
     private Long id;
-    private String title;
-    private Integer price;
-    private String categoryTittle;
-
-
+    private String tittle;
+    private List<ProductDto> products;
 }
-

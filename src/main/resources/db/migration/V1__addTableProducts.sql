@@ -1,6 +1,6 @@
 create table categories (
     id              bigserial primary key,
-    category_name   varchar(255),
+    tittle   varchar(255),
     created_at timestamp default current_timestamp,
     updated_at timestamp default current_timestamp
 );

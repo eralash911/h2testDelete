@@ -1,9 +1,12 @@
 package com.example.h2testdelete.controller;
 
+import com.example.h2testdelete.converter.ProductConverter;
 import com.example.h2testdelete.dto.ProductDto;
+import com.example.h2testdelete.entity.Category;
 import com.example.h2testdelete.entity.Product;
 import com.example.h2testdelete.exceptions.AppError;
 import com.example.h2testdelete.exceptions.ResourceNotFoundException;
+import com.example.h2testdelete.service.CategoryService;
 import com.example.h2testdelete.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +23,18 @@ import java.util.stream.Collectors;
 public class ProductController {
 @Autowired
     private final ProductService productService;
+    private final ProductConverter productConverter;
 
     @GetMapping
     public List<ProductDto>findAllProd(){
 
-        return productService.findAll().stream().map(product -> new ProductDto(product.getId(), product.getTitle(), product.getPrice())).collect(Collectors.toList());
+        return productService.findAll().stream().map(productConverter::entityToDto).collect(Collectors.toList());
+    }
+
+    @PostMapping
+    public ProductDto createProduct(@RequestBody ProductDto productDto){
+        Product product = productService.createNewProduct(productDto);
+        return productConverter.entityToDto(product);
     }
 
 //    @GetMapping("/{id}")
@@ -39,8 +49,8 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ProductDto getProductById(@PathVariable Long id){
-        Product product = productService.findByID(id).orElseThrow(()->new ResourceNotFoundException("product not found"));
-        return new ProductDto(product.getId(), product.getTitle(), product.getPrice());
+        Product p= productService.findByID(id).orElseThrow(()->new ResourceNotFoundException("product not found"));
+        return productConverter.entityToDto(p);
     }
 
     @ExceptionHandler
