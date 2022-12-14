@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -23,10 +24,7 @@ public class Category {
     private Long id;
 
     @Column(name = "category_name")
-    private String categoryName;
-
-    @OneToMany(mappedBy = "category")
-    private List<Product> products;
+    private String tittle;
 
     @CreationTimestamp
     @Column(name = "created_at")
@@ -35,6 +33,13 @@ public class Category {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
+
+
+
+
 
 }
 

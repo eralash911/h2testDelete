@@ -1,6 +1,5 @@
 package com.example.h2testdelete.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
