@@ -7,6 +7,7 @@
         <module>cart-service</module>
         <module>core_sec_service</module>
         <module>apii</module>
+        <module>front-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

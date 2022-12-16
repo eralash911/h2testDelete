@@ -9,11 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
 
 
-    <artifactId>cart-service</artifactId>
+    <artifactId>front-service</artifactId>
 
-    <name>cart-service</name>
+    <name>front-service</name>
+    <version>0.0.1-SNAPSHOT</version>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
