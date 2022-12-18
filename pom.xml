@@ -8,6 +8,7 @@
         <module>core_sec_service</module>
         <module>apii</module>
         <module>front-service</module>
+        <module>gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
