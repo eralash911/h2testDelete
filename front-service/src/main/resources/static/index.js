@@ -70,8 +70,10 @@ angular.module('market', ['ngStorage']).controller('indexController', function (
     }
 
     $scope.createOrder = function () {
-
-    }
+        $http.get('http://localhost:5555/core/api/v1/orders/' + id)
+            alert('order done')
+             $scope.loadCart();
+             }
 
     // $scope.deleteProduct = function (id) {
     //     $http.delete('http://localhost:5555/core/api/v1/products/' + id)

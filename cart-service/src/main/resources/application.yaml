@@ -1,0 +1,17 @@
+server:
+  port: 8190
+  servlet:
+    context-path: /winter-carts
+
+integrations:
+  product-service:
+    url:http://localhost:/winter/
+  read-timeout: 10000
+  wright-timeout: 5000
+  connect-timeout: 5000
+
+
+
+
+
+
