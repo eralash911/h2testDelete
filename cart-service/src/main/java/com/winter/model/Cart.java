@@ -1,14 +1,17 @@
 package com.winter.model;
 
 import com.example.api.ProductDto;
+import com.winter.core.entity.Product;
 import lombok.Data;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 
 @Data
 
 public class Cart {
-    private int totalPrice;
+    private BigDecimal totalPrice;
     private List<CartItem> items;
 
     public Cart(){
@@ -32,9 +35,9 @@ public class Cart {
     }
 
     private void recalculate() {
-        totalPrice = 0;
+        totalPrice = BigDecimal.ZERO;
         for (CartItem item : items) {
-            totalPrice += item.getPrice();
+            totalPrice = totalPrice.add(item.getPrice()).setScale(2, RoundingMode.HALF_DOWN);
         }
     }
 
@@ -49,7 +52,7 @@ public class Cart {
             }
     }
 
-    public void decrement(Product product) {
+    public void decrement(Long product) {
         Iterator<CartItem> iter = items.iterator();
         while (iter.hasNext()) {
             CartItem o = iter.next();
@@ -93,9 +96,11 @@ public class Cart {
 
     public void clear(){
         items.clear();
-        totalPrice = 0;
+        setTotalPrice(BigDecimal.valueOf(0));
     }
 
+    private void setTotalPrice(BigDecimal valueOf) {
+    }
 
 
 }
