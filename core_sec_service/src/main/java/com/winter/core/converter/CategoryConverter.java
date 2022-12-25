@@ -1,5 +1,6 @@
 package com.winter.core.converter;
 
+import com.example.api.CategoryDto;
 import com.winter.core.dto.CategoryDto;
 import com.winter.core.entity.Category;
 import lombok.RequiredArgsConstructor;

@@ -23,7 +23,7 @@ public class CartItemDto {
         this.productTitle = productTitle;
     }
 
-    public int getQuantity() {
+    public int getQuantity(int i) {
         return quantity;
     }
 

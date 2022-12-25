@@ -1,6 +1,7 @@
 package com.example.api;
 
 
+import java.math.BigDecimal;
 
 public class ProductDto {
     private Long id;
@@ -8,7 +9,7 @@ public class ProductDto {
     private Integer price;
     private String categoryTittle;
 
-    public ProductDto(Long id, String title, Integer price, String categoryTittle) {
+    public ProductDto(Long id, String title, BigDecimal price, String categoryTittle) {
         this.id = id;
         this.title = title;
         this.price = price;
